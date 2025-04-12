@@ -1,10 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 export default function SectionFour() {
-    const [isHovered, setIsHovered] = useState(false);
+ 
     
     // Animation variants
     const fadeIn = {
@@ -48,8 +48,6 @@ export default function SectionFour() {
                             initial="initial"
                             whileHover="hover"
                             variants={scaleUp}
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
                         >
                             {/* Video thumbnail */}
                             <Image

@@ -1,5 +1,4 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+
 import Hero from "./src/components/hero";
 import DynamicSection from "./src/components/dynamic";
 import SectionThree from "./src/components/sectionThree";
