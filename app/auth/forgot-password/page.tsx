@@ -2,10 +2,13 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
+import LoginImage from '@/public/images/loginimage.png';
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,8 +22,8 @@ export default function ForgotPassword() {
       <div className="flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
         {/* Left side with image */}
         <div className="md:w-1/2">
-          <img 
-            src="https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+          <Image 
+            src={LoginImage}
             alt="Plant in glass terrarium" 
             className="w-full h-full object-cover"
           />
@@ -46,7 +49,7 @@ export default function ForgotPassword() {
               </svg>
               <h2 className="mt-4 text-2xl font-bold text-gray-900">Check your email</h2>
               <p className="mt-2 text-gray-600">
-                We've sent a password reset link to {email}
+                We have sent a password reset link to {email}
               </p>
               <div className="mt-8">
                 <Link
@@ -62,7 +65,7 @@ export default function ForgotPassword() {
               <div className="mb-10">
                 <h1 className="text-2xl font-bold text-gray-900">Reset your password</h1>
                 <p className="text-gray-600 mt-1 text-sm">
-                  Enter your email address and we'll send you a link to reset your password.
+                  Enter your email address and we will send you a link to reset your password.
                 </p>
               </div>
 

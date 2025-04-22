@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import LoginImage from '@/public/images/loginimage.png';
+import Image from 'next/image';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -21,8 +22,8 @@ export default function Login() {
       <div className="flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
         {/* Left side with image */}
         <div className="md:w-1/2">
-          <img 
-            src={LoginImage.src}
+          <Image 
+            src={LoginImage}
             alt="Plant in glass terrarium" 
             className="w-full h-full object-cover"
           />
@@ -33,7 +34,7 @@ export default function Login() {
           <div className="mb-10">
             <h1 className="text-2xl font-bold text-gray-900">Sign in</h1>
             <p className="text-gray-600 mt-1 text-sm">
-              Don't have an account? <Link href="/auth/register" className="text-[#6FC78F] hover:underline">
+              Don&apos;t have an account? <Link href="/auth/register" className="text-[#6FC78F] hover:underline">
               <span className="text-[#6FC78F] hover:underline">Click here</span>
               </Link> to create one.
             </p>

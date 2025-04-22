@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import SignUpImage from '@/public/images/signupimage.png';
+import Image from 'next/image';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -26,8 +27,8 @@ export default function Register() {
       <div className="flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
         {/* Left side with image */}
         <div className="md:w-1/2">
-          <img 
-            src={SignUpImage.src}
+          <Image 
+            src={SignUpImage}
             alt="Plant in glass terrarium" 
             className="w-full h-full object-cover"
           />
