@@ -248,60 +248,48 @@ const Navigation: React.FC = () => {
               <FiSearch size={20} />
             </button>
             
-            <Link href="/cart" className="text-[#000000] ">
-              <FiShoppingCart size={20} color="#000000" />
+            <Link href="/auth/login" className="ml-4 flex items-center gap-1">
+              <FiShoppingCart size={20} color="#15B67A" />
+              <span className="bg-[#15B67A] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
             </Link>
             
-            <Link 
-              href="/signup" 
-              className="bg-[#15B67A] text-white text-sm px-5 py-2 rounded-md font-medium hover:bg-opacity-90"
-            >
-              Sign up
-            </Link>
-            <Link 
-              href="/login" 
-              className="bg-[#0f766e] text-white text-sm px-5 py-2 rounded-md font-medium hover:bg-opacity-90"
-            >
-              Log In
-            </Link>
+            <div className="ml-6 flex items-center gap-3">
+              <Link 
+                href="/auth/login" 
+                className="px-4 py-2 rounded-md text-[#15B67A] border border-[#15B67A] hover:bg-[#15B67A] hover:text-white transition-all"
+              >
+                Sign In
+              </Link>
+              <Link 
+                href="/auth/register" 
+                className="px-4 py-2 rounded-md bg-[#15B67A] text-white hover:bg-[#12a16c] transition-all"
+              >
+                Sign Up
+              </Link>
+            </div>
           </div>
         </div>
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden px-4 pb-4 bg-white border-t border-gray-100 max-h-[calc(100vh-80px)] overflow-y-auto">
-            <div className="py-2">
-              {/* Mobile Navigation Links */}
+          <div className="lg:hidden fixed inset-0 bg-white z-50 pt-[80px] flex flex-col">
+            <div className="flex-1 overflow-y-auto px-4 py-6">
               {navItems.map((item, index) => (
-                <NavLink key={`mobile-${index}`} item={item} isMobile={true} />
+                <NavLink key={`mobile-nav-${index}`} item={item} isMobile />
               ))}
               
-              {/* Mobile Search and Cart */}
-              <div className="flex items-center gap-4 py-4 border-b border-gray-100">
-                <button className="text-[#000000]">
-                  <FiSearch size={20} color="#000000" />
-                  
-                </button>
-                
-                <Link href="/cart" className="text-[#000000] flex items-center">
-                  <FiShoppingCart size={20} color="#000000" />
-                  
-                </Link>
-              </div>
-              
-              {/* Mobile Authentication */}
-              <div className="flex flex-col gap-4 py-4">
+              <div className="mt-6 flex flex-col gap-3">
                 <Link 
-                  href="/signup" 
-                  className="bg-[#15B67A] text-white text-center py-3 rounded-md font-medium hover:bg-opacity-90"
+                  href="/auth/login" 
+                  className="w-full px-4 py-3 rounded-md text-[#15B67A] border border-[#15B67A] text-center"
                 >
-                  Sign up
+                  Sign In
                 </Link>
                 <Link 
-                  href="/login" 
-                  className="bg-[#0f766e] text-white text-center py-3 rounded-md font-medium hover:bg-opacity-90"
+                  href="/auth/register" 
+                  className="w-full px-4 py-3 rounded-md bg-[#15B67A] text-white text-center"
                 >
-                  Log In
+                  Sign Up
                 </Link>
               </div>
             </div>
